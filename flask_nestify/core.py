@@ -28,7 +28,6 @@ from .globals import injectables
 from .globals import methods_map
 from .globals import decorators
 from .globals import ready
-from sqlalchemy.exc import InvalidRequestError
 
 
 def binding(cls) -> object:
