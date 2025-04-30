@@ -29,14 +29,6 @@ jobs:
         run: |
           poetry version $GITHUB_REF_NAME
 
-      - name: Commit version change
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add pyproject.toml
-          git commit --amend --no-edit --allow-empty
-          git push origin HEAD:master --force
-
       - name: Publish to PyPI
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_API_TOKEN }}
